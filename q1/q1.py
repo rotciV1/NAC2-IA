@@ -39,6 +39,7 @@ while True:
             larg, alt = template.shape[::-1]
             bottom_right = (min_loc[0] + larg, min_loc[1] + alt)
             cv2.rectangle(frame, min_loc, bottom_right, (0, 255, 0), 3)
+            cv2.putText(frame, 'CARTA DETECTADA', (50, 50), cv2.FONT_HERSHEY_SIMPLEX,1,(200,50,0),2,cv2.LINE_AA)
 
         case "Rei Ouros":
             template = cv2.imread("reiOuros.png", 0)
@@ -50,6 +51,7 @@ while True:
             larg, alt = template.shape[::-1]
             bottom_right = (min_loc[0] + larg, min_loc[1] + alt)
             cv2.rectangle(frame, min_loc, bottom_right, (0, 255, 0), 3)
+            cv2.putText(frame, 'CARTA DETECTADA', (50, 50), cv2.FONT_HERSHEY_SIMPLEX,1,(200,50,0),2,cv2.LINE_AA)
 
         case "As Ouros":
             template = cv2.imread("asOuros.png", 0)
@@ -61,6 +63,7 @@ while True:
             larg, alt = template.shape[::-1]
             bottom_right = (min_loc[0] + larg, min_loc[1] + alt)
             cv2.rectangle(frame, min_loc, bottom_right, (0, 255, 0), 3)
+            cv2.putText(frame, 'CARTA DETECTADA', (50, 50), cv2.FONT_HERSHEY_SIMPLEX,1,(200,50,0),2,cv2.LINE_AA)
 
         case "7 Ouros":
             template = cv2.imread("7Ouros.png", 0)
@@ -72,6 +75,7 @@ while True:
             larg, alt = template.shape[::-1]
             bottom_right = (min_loc[0] + larg, min_loc[1] + alt)
             cv2.rectangle(frame, min_loc, bottom_right, (0, 255, 0), 3)
+            cv2.putText(frame, 'CARTA DETECTADA', (50, 50), cv2.FONT_HERSHEY_SIMPLEX,1,(200,50,0),2,cv2.LINE_AA)
 
         case "10 Espadas":
             template = cv2.imread("10Espadas.png", 0)
@@ -79,10 +83,12 @@ while True:
 
             res = cv2.matchTemplate(imgGray, template, cv2.TM_SQDIFF)
             min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
+            
 
             larg, alt = template.shape[::-1]
             bottom_right = (min_loc[0] + larg, min_loc[1] + alt)
             cv2.rectangle(frame, min_loc, bottom_right, (0, 255, 0), 3)
+            cv2.putText(frame, 'CARTA DETECTADA', (50, 50), cv2.FONT_HERSHEY_SIMPLEX,1,(200,50,0),2,cv2.LINE_AA)
 
     # Exibe resultado
     cv2.imshow("Feed", frame)
