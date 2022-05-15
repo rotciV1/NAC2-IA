@@ -85,7 +85,7 @@ while True:
             cv2.rectangle(frame, min_loc, bottom_right, (0, 255, 0), 3)
 
     # Exibe resultado
-    cv2.imshow("Feed", res)
+    cv2.imshow("Feed", frame)
 
     # Wait for key 'ESC' to quit
     key = cv2.waitKey(1) & 0xFF
